@@ -1,0 +1,9 @@
+<h1>{{ articles.author }} 的文章列表</h1>
+
+{% for article in articles %}
+  <div class="article">
+    <h2>{{ article.title }}</h2>
+    <p>作者：{{ article.author }}</p>
+    <!-- 其他文章相关信息 -->
+  </div>
+{% endfor %}

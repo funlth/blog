@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    {% if article_preview_form.is_valid %}
+      <h1>{{ article_preview_form.cleaned_data.title }}</h1>
+      <p class="text-muted">{{ article_preview_form.cleaned_data.publish }}</p>
+      <hr>
+      <div>{{ article_preview_form.cleaned_data.body|safe }}</div>
+      <hr>
+      <p class="text-muted">作者：{{ request.user.username }} 发布于 {{ article_preview_form.cleaned_data.publish }}</p>
+      <a href="{% url 'article:article_create' %}" class="btn btn-info my-3">退出预览</a>
+    {% else %}
+      <h1>表单内容有误</h1>
+      <p>{{ article_preview_form.errors }}</p>
+    {% endif %}
+  </div>
+
+     <style>
+    footer {
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+}
+    </style>
+
+{% endblock %}

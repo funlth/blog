@@ -1,0 +1,5 @@
+{% for comment in comments %}
+  <li>{{ comment.text }} — {{ comment.user.username }}, {{ comment.created_at|date }}</li>
+{% empty %}
+  <li>No comments yet.</li>
+{% endfor %}

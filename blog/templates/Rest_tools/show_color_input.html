@@ -1,0 +1,28 @@
+<!-- HTML 代码 -->
+<input type="text" id="input_field">
+
+<!-- CSS 代码 -->
+<style>
+    .green {
+        background-color: green;
+    }
+
+    .red {
+        background-color: red;
+    }
+</style>
+
+<!-- JavaScript 代码 -->
+<script>
+    const inputField = document.getElementById('input_field');
+
+    inputField.addEventListener('input', () => {
+        if (inputField.value.length > 5) {
+            inputField.classList.add('green');
+            inputField.classList.remove('red');
+        } else {
+            inputField.classList.add('red');
+            inputField.classList.remove('green');
+        }
+    });
+</script>

@@ -1,0 +1,234 @@
+<!-- 载入静态文件 -->
+{% load static %}
+
+<!DOCTYPE html>
+<!-- 网站主语言 -->
+<html lang="en">
+
+<head>
+    <!-- 网站采用的字符编码 -->
+    <meta charset="utf-8">
+    <!-- 网站标题 -->
+    <title>{% block title %} {% endblock %}</title>
+    <!--favicon.ico-->
+    <link href="favicon.ico" rel="shortcut icon">
+    <!-- 引入bootstrap的css文件 -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <!-- 引入monikai.css -->
+    <link rel="stylesheet" href="{% static 'md_css/monokai.css' %}">
+    <!--bootstrap-button-->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-button.css' %}">
+    <!--lightbox-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
+    <link
+            rel="stylesheet"
+            href="{% static 'cssFile/all.css' %}"
+    >
+
+    <link rel="stylesheet" href="{% static 'hover.css' %}">
+
+
+    <link rel="alternate" type="application/rss+xml" title="My Site Title" href="{% url 'article:my_feed' %}">
+    <!-- 添加了 RSS 订阅链接的 HTML 标记 -->
+
+</head>
+
+
+<body class="element">
+
+<!-- 引入导航栏 -->
+{% include 'header.html' %}
+
+<!-- 预留具体页面的位置 -->
+<div id="wrapper">
+
+                {% block content %}{% endblock content %}
+                <div id="push"></div>
+
+</div>
+
+<!-- 引入注脚 -->
+{% include 'footer.html' %}
+
+
+<!--示例-->
+
+
+<!-- bootstrap.js 依赖 jquery.js 和popper.js，因此在这里引入 -->
+<script src="{% static 'jquery/jquery-3.3.1.js' %}"></script>
+
+<script src="https://npmcdn.com/masonry-layout@4.1/dist/masonry.pkgd.min.js">
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1-lts/dist/umd/popper.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+
+<!-- 引入bootstrap的js文件 -->
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+<!-- 引入layer.js -->
+<script src="{% static 'layer/layer.js' %}"></script>
+
+{% block script %}{% endblock script %}
+
+{#{% url 'latest_posts_feed' %}#}
+
+{% include 'back_to_top_func.html' %}
+
+
+<style>
+
+
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+
+    }
+
+
+    @media (max-width: 768px) {
+        /* Adjust for smaller screens */
+        body {
+            background-size: contain;
+        }
+    }
+
+    #wrapper {
+        min-height: 500px;
+        margin-bottom: -60px;
+
+    }
+
+
+    #push {
+        height: 100px;
+
+        margin-top: auto;
+        align-self: flex-end;
+
+    }
+
+
+    .element {
+    {#background-image: url('/static/image/blogLogo.jpg');#} background-size: cover;
+        animation-name: animateBackground;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes animateBackground {
+        from {
+            background-position: 0 0;
+        }
+        to {
+            background-position: -500px -500px;
+        }
+        /* adjust as needed */
+    }
+
+    /* 设置页面的字体和背景颜色 */
+    body {
+        font-family: sans-serif;
+        background-color: #f7f7f7;
+        color: #333;
+    }
+
+    /* 设置标题的样式 */
+    h1, h2, h3 {
+        font-weight: bold;
+        color: #666;
+    }
+
+    /* 设置链接的样式 */
+    a {
+        color: #0077cc;
+        text-decoration: none;
+        border-bottom: 1px solid #0077cc;
+    }
+
+    a:hover {
+        background-color: #0077cc;
+        color: #fff;
+    }
+
+    /* 设置文章元素的样式 */
+    .post {
+        margin-bottom: 1.5em;
+    }
+
+    .post h2 {
+        font-size: 1.8rem;
+        margin-top: 0;
+    }
+
+    .post p {
+        line-height: 1.6;
+    }
+
+    .post img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .post blockquote {
+        padding: 1em;
+        background-color: #f0f0f0;
+        margin: 1em 0;
+    }
+
+    /* 设置侧边栏的样式 */
+    .sidebar {
+        background-color: #fff;
+        padding: 1em;
+        border: 1px solid #ddd;
+    }
+
+
+    /* 响应式设计 */
+    @media screen and (max-width: 600px) {
+        body {
+            font-size: 16px;
+        }
+
+        .post h2 {
+            font-size: 1.5rem;
+        }
+
+        .sidebar {
+            display: none;
+        }
+    }
+
+    #demo_div {
+        display: block;
+        margin: 20px;
+        padding: 20px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .sidebar {
+        will-change: min-height;
+    }
+
+    .sidebar__inner {
+        transform: translate(0, 0); /* For browsers don't support translate3d. */
+        transform: translate3d(0, 0, 0);
+        will-change: position, transform;
+    }
+
+</style>
+
+</body>
+
+</html>

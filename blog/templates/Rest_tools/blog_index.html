@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>我的博客</title>
+	<!-- 引入Bootstrap样式文件 -->
+	<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" crossorigin="anonymous">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="#">我的博客</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+	    <ul class="navbar-nav ml-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">首页<span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">分类</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">标签</a>
+	      </li>
+        <li class="nav-item">
+	        <a class="nav-link" href="#">关于我</a>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+
+	<div class="container mt-5">
+	  <div class="row">
+	    <div class="col-sm-8">
+	      <h2>文章标题</h2>
+	      <p class="text-muted">作者 | 发布时间 | 分类 | 标签</p>
+	      <p>文章内容</p>
+	    </div>
+	    <div class="col-sm-4">
+	      <h5>分类目录</h5>
+	      <ul class="list-group list-group-flush">
+	        <li class="list-group-item"><a href="#">分类1</a></li>
+	        <li class="list-group-item"><a href="#">分类2</a></li>
+	        <li class="list-group-item"><a href="#">分类3</a></li>
+	      </ul>
+	      <h5 class="mt-4">标签云</h5>
+	      <div class="btn-group btn-group-sm" role="group" aria-label="Tags Cloud">
+	        <button type="button" class="btn btn-secondary">标签1</button>
+	        <button type="button" class="btn btn-secondary">标签2</button>
+	        <button type="button" class="btn btn-secondary">标签3</button>
+	        <button type="button" class="btn btn-secondary">标签4</button>
+	        <button type="button" class="btn btn-secondary">标签5</button>
+	        <button type="button" class="btn btn-secondary">标签6</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- 引入Bootstrap.js文件 -->
+	<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>欢迎来到我的网站</title>
+  <style>
+    /* 设置全局样式 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+      transition: all 0.6s ease-out;
+    }
+    section h1 {
+      font-size: 4rem;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.3rem;
+      font-weight: 700;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    section .fade-left,
+    section .fade-right {
+      opacity: 0;
+      transform: translateY(50%);
+      transition: all 0.8s ease-out;
+    }
+    section .fade-right {
+      transform: translateY(-50%);
+    }
+    section.show::before {
+      background-color: rgba(0, 0, 0, 0);
+    }
+    section.show h1 {
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+    section.show .fade-left,
+    section.show .fade-right {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .pink {
+      background-image: url(https://images.unsplash.com/photo-1498050108023-aabebf46dee6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dGVhY2hlcnxlbnwwfHwwfHw%3D&amp;ixlib=rb-1.2.1&w=1000&q=80);
+    }
+    .orange {
+      background-image: url(https://images.unsplash.com/photo-1516534775068-ba07fefbbcda?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8b3JhbmdvJTIwdGVhY2hlcndpc2VzfGVufDB8fDB8fHw%3D&amp;ixlib=rb-1.2.1&w=1000&q=80);
+    }
+    .purple {
+      background-image: url(https://images.unsplash.com/photo-1526353141587-e315791b4753?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGFwcGFyYWRhbXxlbnwwfHwwfHw%3D&amp;ixlib=rb-1.2.1&w=1000&q=80);
+    }
+  </style>
+</head>
+<body>
+  <section class="pink"  href="/" title="跳转至首页">
+    <div class="fade-left">
+      <h2>Welcome!</h2>
+      <p>这个是一个用CSS和JavaScript制作的欢迎界面。当您滚动页面时，会产生动画效果。</p>
+    </div>
+    <div class="fade-right">
+      <h2>Explore</h2>
+      <p>我们为您提供最新的网站设计和开发知识，以及业内领先的技术信息。</p>
+    </div>
+  </section>
+  <section class="orange"  href="/" title="跳转至首页">
+    <div class="fade-left">
+      <h2>Services</h2>
+      <p>我们提供多种类型的服务，例如网站设计、网站开发等等。</p>
+    </div>
+    <div class="fade-right">
+      <h2>Contact us</h2>
+      <p>如果您对我们的服务有任何疑问或建议，请随时与我们联系。</p>
+      <a href="#">联系我们</a>
+    </div>
+  </section>
+  <section class="purple"  href="/" title="跳转至首页">
+    <div class="fade-left">
+      <h2 href="/" title="跳转至首页">About us</h2>
+      <p>我们是一群热爱Web开发的coder，在这里分享我们的经验和技巧，希望与大家共同进步。</p>
+    </div>
+    <div class="fade-right">
+      <h2>Join us</h2>
+      <p>如果您想成为我们的一员，并与我们共同开拓Web开发领域，请发送简历至我们的邮箱。</p>
+    </div>
+  </section>
+  <script>
+    let sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+      let currentSection = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if(pageYOffset >= (sectionTop - sectionHeight / 2)) {
+          currentSection = section.getAttribute('class');
+        }
+      })
+      setActive(currentSection);
+    });
+
+    const setActive = (style) => {
+      sections.forEach(section => {
+        section.classList.remove('show')
+        if(section.classList.contains(style)) {
+          section.classList.add('show');
+        }
+      })
+    }
+  </script>
+</body>
+</html>

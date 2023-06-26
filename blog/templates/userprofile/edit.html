@@ -1,0 +1,125 @@
+{#{% extends "base.html" %}#}
+{#{% load static %}#}
+{#{% block title %} 用户信息 {% endblock title %}#}
+{##}
+{#{% block content %}#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-12">#}
+{#                <br>#}
+{#                <div class="col-md-4">用户名: <b>{{ user.username }}</b></div>#}
+{#                <br>#}
+{#                {% if profile.avatar %}#}
+{#                    <div class="col-md-4">头像</div>#}
+{#                    <img src="{{ profile.avatar.url }}" style="max-width: 20%; border-radius: 15%;" class="col-md-4" height="110px" width="110px">#}
+{#                {% else %}#}
+{#                    <h5 class="col-md-4">暂无头像</h5>#}
+{#                {% endif %}#}
+{#                <br>#}
+{#                <form method="post" action="." enctype="multipart/form-data">#}
+{#                    {% csrf_token %}#}
+{#                    <!-- avatar -->#}
+{#                    <div class="form-group col-md-4">#}
+{#                        <label for="avatar">上传头像</label>#}
+{#                        <input type="file" class="form-control-file" name="avatar" id="avatar">#}
+{#                    </div>#}
+{##}
+{#                    <!-- phone -->#}
+{#                    <div class="form-group col-md-4">#}
+{#                        <label for="phone">电话</label>#}
+{#                        <input type="text" class="form-control" id="phone" name="phone" value="{{ profile.phone }}">#}
+{#                    </div>#}
+{#                    <!-- bio -->#}
+{#                    <div class="form-group col-md-4">#}
+{#                        <label for="bio">简介</label>#}
+{#                        <!-- 文本区域 -->#}
+{#                        <textarea type="text" class="form-control" id="bio" name="bio"#}
+{#                                  rows="6">{{ profile.bio }}</textarea>#}
+{#                    </div>#}
+{#                    <!-- 提交按钮 -->#}
+{#                    <button type="submit" class="btn btn-primary">提交</button>#}
+{#                </form>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{##}
+{#    <style>#}
+{#        img {#}
+{#            border: 1px solid #ddd;#}
+{#            border-radius: 4px;#}
+{#            padding: 5px;#}
+{#            width: 78px;#}
+{#            height: 110px;#}
+{#        }#}
+{#    </style>#}
+{##}
+{##}
+{#{% endblock %}#}
+
+
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %} 用户信息 {% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <br>
+                <div class="col-md-4">用户名: <strong>{{ user.username }}</strong></div>
+                <br>
+                <div class="col-md-4">
+                    {% if profile.avatar %}
+                        <img src="{{ profile.avatar.url }}" class="rounded-circle" width="110px" height="110px">
+                    {% else %}
+                        <h5>暂无头像</h5>
+                    {% endif %}
+                </div>
+                <div class="col-md-8">
+                    <form method="post" action="." enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <!-- phone -->
+                        <div class="form-group row">
+                            <label for="phone" class="col-sm-2 col-form-label">电话</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="phone" name="phone"
+                                       value="{{ profile.phone }}">
+                            </div>
+                        </div>
+
+                        <!-- bio -->
+                        <div class="form-group row">
+                            <label for="bio" class="col-sm-2 col-form-label">简介</label>
+                            <div class="col-sm-10">
+                                <!-- 文本区域 -->
+                                <textarea type="text" class="form-control" id="bio" name="bio"
+                                          rows="6">{{ profile.bio }}</textarea>
+                            </div>
+                        </div>
+
+                        <!-- avatar -->
+                        <div class="form-group row">
+                            <label for="avatar" class="col-sm-2 col-form-label">上传头像</label>
+                            <div class="col-sm-10">
+                                <input type="file" class="form-control-file" name="avatar" id="avatar">
+                                {% if profile.avatar %}
+                                    <small class="form-text text-muted">上传新头像将覆盖原头像</small>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- 提交按钮 -->
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-primary">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

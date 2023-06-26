@@ -1,0 +1,251 @@
+<!-- extends表明此页面继承自 base.html 文件 -->
+{#{% extends "base.html" %}#}
+
+{#{% load static %}#}
+<!-- 写入 base.html 中定义的 title -->
+{#{% block title %} 写文章 {% endblock title %}#}
+<!-- 写入 base.html 中定义的 content -->
+{#{% block content %}#}
+{#    <!-- 写文章表单 -->#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-12">#}
+{#                <br>#}
+{#                <!-- 提交文章的表单 -->#}
+{#                <form method="post" action="." enctype="multipart/form-data">#}
+{#                    <!-- Django中需要POST数据的地方都必须有csrf_token -->#}
+{#                    {% csrf_token %}#}
+{##}
+{#                    <!-- 文章标题图 -->#}
+{#                    <div class="form-group">#}
+{#                        <label for="avatar">标题图</label>#}
+{#                        <input type="file" class="form-control-file" name="avatar" id="avatar">#}
+{#                    </div>#}
+{##}
+{#                    <!-- 文章标题 -->#}
+{#                    <div class="form-group">#}
+{#                        <!-- 标签 -->#}
+{#                        <label for="title">文章标题</label>#}
+{#                        <!-- 文本框 -->#}
+{#                        <input type="text"#}
+{#                               class="form-control"#}
+{#                               id="title"#}
+{#                               name="title"#}
+{#                        >#}
+{#                    </div>#}
+{##}
+{#                    <!-- 文章栏目 -->#}
+{#                    <div class="form-group">#}
+{#                        <label for="column">栏目</label>#}
+{#                        <select class="form-control col-3"#}
+{#                                id="column"#}
+{#                                name="column"#}
+{#                        >#}
+{#                            <option value="none">请选择栏目..</option>#}
+{#                            {% for column in columns %}#}
+{#                                <option value="{{ column.id }}">{{ column }}</option>#}
+{#                            {% endfor %}#}
+{#                        </select>#}
+{#                    </div>#}
+{##}
+{#                    <!-- 文章标签 -->#}
+{#                    <div class="form-group">#}
+{#                        <!-- 标签 -->#}
+{#                        <label for="tags">标签</label>#}
+{#                        <!-- 文本框 -->#}
+{#                        <input type="text"#}
+{#                               class="form-control col-3"#}
+{#                               id="tags"#}
+{#                               name="tags"#}
+{#                        >#}
+{#                    </div>#}
+{##}
+{#                    <!-- 文章正文 -->#}
+{#                    <div class="form-group">#}
+{##}
+{#                        <label for="body">文章正文</label>#}
+{#                        <!-- 文本区域 -->#}
+{#                        <textarea type="text"#}
+{#                                  class="form-control"#}
+{#                                  id="editor"#}
+{#                                  name="body"#}
+{#                                  rows="12"#}
+{#                        ></textarea>#}
+{#                    </div>#}
+{#                <!--预览-->#}
+{##}
+{##}
+{#                    <!-- 提交按钮 -->#}
+{#                    <button type="submit" class="btn btn-primary">完成</button>#}
+{##}
+{#                </form>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#    <script>#}
+{##}
+{#    </script>#}
+{##}
+{#{% endblock content %}#}
+
+
+{#{% extends "base.html" %}#}
+{#{% load static %}#}
+{#{% block title %} 写文章 {% endblock title %}#}
+
+{#{% block content %}#}
+{#    <div class="container">#}
+{#        <div class="row justify-content-center">#}
+{#            <div class="col-lg-8 col-md-10 col-sm-12">#}
+{#                <br>#}
+{#                <form method="post" action="." enctype="multipart/form-data">#}
+{#                    {% csrf_token %}#}
+{##}
+{#                    <!-- 文章标题图 -->#}
+{#                    <div class="form-group">#}
+{#                        <label for="avatar"><h6>标题图</h6></label>#}
+{#                        <input type="file" class="form-control-file" name="avatar" id="avatar">#}
+{#                    </div>#}
+{##}
+{#                    <!-- 文章标题 -->#}
+{#                    <div class="form-group">#}
+{#                        <label for="title"><h6>文章标题</h6></label>#}
+{#                        <input type="text" class="form-control" id="title" name="title">#}
+{#                    </div>#}
+{##}
+{#                   <!-- 文章栏目 -->#}
+{#                    <div class="form-group">#}
+{#                        <label for="column"><h6>栏目</h6></label>#}
+{#                        <select class="form-control" id="column" name="column">#}
+{#                            <option value="none">请选择栏目..</option>#}
+{#                            {% for column in columns %}#}
+{#                                <option value="{{ column.id }}">{{ column }}</option>#}
+{#                            {% endfor %}#}
+{#                        </select>#}
+{#                    </div>#}
+{##}
+{#                    <!-- 文章标签 -->#}
+{#                    <div class="form-group">#}
+{#                        <label for="tags"><h6>标签</h6></label>#}
+{#                        <input type="text" class="form-control" id="tags" name="tags">#}
+{#                    </div>#}
+{##}
+{#                    <!-- 文章正文 -->#}
+{#                    <div class="form-group">#}
+{#                        <label for="body"><h6>文章正文</h6></label>#}
+{#                        <textarea type="text" class="form-control" id="editor" name="body" rows="12"></textarea>#}
+{#                    </div>#}
+{##}
+{#                    <!-- 提交按钮 -->#}
+{#                    <button type="submit" class="btn btn-primary">完成</button>#}
+{#                </form>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#{% endblock %}#}
+
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} 发布新文章 {% endblock %}
+
+{% block content %}
+    <div class="container px-md-5 py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+
+                <form method="post" action="." enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <!-- 文章标题图 -->
+                    <div class="mb-4">
+                        <label for="avatar"><h6 class="mb-3">上传题图</h6></label>
+                        <input type="file" class="form-control-file" name="avatar" id="avatar">
+                        <small class="text-muted mt-2">请选择一张适合的图片作为题图，不支持动态图。</small>
+                    </div>
+
+                    <!-- 文章标题 -->
+                    <div class="mb-4">
+                        <label for="title"><h6 class="mb-3">文章标题</h6></label>
+                        <input type="text" class="form-control" id="title" name="title">
+                    </div>
+
+                    <!-- 分类 -->
+                    <div class="mb-4">
+                        <label for="column"><h6 class="mb-3">分类</h6></label>
+                        <select class="custom-select d-block w-100" id="column" name="column">
+                            <option value="" selected disabled hidden>请选择分类...</option>
+                            {% for column in columns %}
+                                <option value="{{ column.id }}">{{ column }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- 标签 -->
+                    <div class="mb-4">
+                        <label for="tags"><h6 class="mb-3">标签</h6></label>
+                        <input type="text" class="form-control" id="tags" name="tags" placeholder="用逗号隔开">
+                    </div>
+
+                    <!-- 正文 -->
+                    <div class="mb-4">
+                        <label for="body"><h6 class="mb-3">正文</h6></label>
+                        <textarea class="form-control textarea-autosize" id="editor1" name="body" rows="5"></textarea>
+                        <p id="warning" style="display: none; color: red;">输入文本中含有不良信息，请修改后重新提交。</p>
+                    </div>
+
+                    <!-- 提交按钮 -->
+                    <div class="mt-4">
+                        <button type="submit" id="submit" class="btn btn-primary mr-2">发表文章</button>
+                        <a href="{% url 'home' %}" class="btn btn-secondary">取消</a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+<!-- 加载编辑器的 CSS 和 JavaScript 文件 -->
+{% block script %}
+    {{ form.media.js }}
+    <script>
+        const submitButton = document.querySelector('#submit');
+        const inputTextArea = document.querySelector('#editor1');
+        const warningPara = document.querySelector('#warning');
+
+        // 定义需要检查的关键词（可以从后端获取）
+        const forbiddenWordsRegex = /敏感词汇|不当言论/g;
+
+        // 监听输入框的输入事件，实时检查用户的输入
+        inputTextArea.addEventListener('input', (event) => {
+            const inputValue = event.target.value; // 获取用户输入的文本
+
+            // 检查输入内容中是否含有敏感词汇
+            if (forbiddenWordsRegex.test(inputValue)) {
+                submitButton.disabled = true; // 禁用提交按钮
+                warningPara.style.display = 'block'; // 显示警告消息
+            } else {
+                submitButton.disabled = false; // 启用提交按钮
+                warningPara.style.display = 'none'; // 隐藏警告消息
+            }
+
+            // 检查输入内容是否含有危险的 JavaScript 代码
+            try {
+                const doc = new DOMParser().parseFromString(inputValue, 'text/html');
+                doc.querySelectorAll('script').forEach((elem) => elem.parentNode.removeChild(elem)); // 移除所有 <script> 标签
+            } catch (err) {
+                submitButton.disabled = true; // 禁用提交按钮
+                warningPara.style.display = 'block'; // 显示警告消息
+            }
+        });
+
+        // 监听表单的提交事件，如果禁用了提交按钮则取消默认行为（即不发送请求到后端）
+        document.querySelector('form').addEventListener('submit', (event) => {
+            if (submitButton.disabled) {
+                event.preventDefault(); // 取消默认提交行为
+            }
+        });
+    </script>
+{% endblock %}

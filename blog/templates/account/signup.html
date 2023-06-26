@@ -1,0 +1,133 @@
+{#{% extends "base.html" %}#}
+{##}
+{#{% load i18n %}#}
+{#{% load widget_tweaks %}#}
+{##}
+{#{% block head_title %}{% trans "Signup" %}{% endblock %}#}
+{##}
+{#{% block content %}#}
+{##}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-12">#}
+{#                <br>#}
+{#                <div class="col-6">#}
+{#                    <p>{% blocktrans %}已有账号： <a href="{{ login_url }}">登录</a>#}
+{#                        .{% endblocktrans %}#}
+{#                    </p>#}
+{#                    <form class="signup auto-width" id="signup_form" method="post" action="{% url 'account_signup' %}">#}
+{#                        {% csrf_token %}#}
+{##}
+{#                        {% for hidden in form.hidden_fields %}#}
+{#                            {{ hidden }}#}
+{#                        {% endfor %}#}
+{##}
+{#                        {% for field in form.visible_fields %}#}
+{#                            <div class="form-group">#}
+{#                                <label for="{{ field.id_for_label }}">{{ field.label }}</label>#}
+{#                                {{ field|add_class:'form-control' }}#}
+{#                                {% for error in field.errors %}#}
+{#                                    <span class="help-block">{{ error }}</span>#}
+{#                                {% endfor %}#}
+{#                            </div>#}
+{#                        {% endfor %}#}
+{##}
+{##}
+{#                        {% if redirect_field_value %}#}
+{#                            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>#}
+{#                        {% endif %}#}
+{##}
+{#                        <div class="form-group">#}
+{#                            <button type="submit" class="btn btn-success"> {% trans "Sign Up" %}</button>#}
+{#                        </div>#}
+{#                    </form>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{##}
+{#    <style>#}
+{#    footer {#}
+{#   position: fixed;#}
+{#   bottom: 0;#}
+{#   width: 100%;#}
+{#}#}
+{#    </style>#}
+{#{% endblock %}#}
+
+
+
+
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <br>
+                <div class="col-6">
+                    <p>{% blocktrans %}已有账号：<a href="{{ login_url }}">登录</a>.{% endblocktrans %}</p>
+                    <form class="signup auto-width" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                        {% csrf_token %}
+
+                        {% for hidden in form.hidden_fields %}
+                            {{ hidden }}
+                        {% endfor %}
+
+                        {% for field in form.visible_fields %}
+                            <div class="form-group">
+                                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                {{ field|add_class:'form-control' }}
+                                {% for error in field.errors %}
+                                    <span class="help-block text-danger">{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+
+                        {% if redirect_field_value %}
+                            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                        {% endif %}
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">{% trans "Sign Up" %}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 对表单数据进行验证
+        const form = document.getElementById('signup_form');
+        form.addEventListener('submit', (event) => {
+          const inputElements = Array.from(event.target.getElementsByTagName('input'));
+          const errorMessages = [];
+
+          inputElements.forEach((element) => {
+            if (!element.checkValidity()) {
+              errorMessages.push(`请填写${element.placeholder}`);
+            }
+          });
+
+          if (errorMessages.length !== 0) {
+            event.preventDefault();
+            alert(errorMessages.join('\n'));
+          }
+        });
+    </script>
+
+    <style>
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>聊天室: {{ room_name }}</h1>
+
+    <hr>
+
+    <div id="chat-messages">
+        {% for message in messages %}
+            <p class="message"><strong>{{ message.user }}:</strong> {{ message.content }}</p>
+        {% empty %}
+            <p>暂无历史消息</p>
+        {% endfor %}
+    </div>
+
+    <hr>
+
+    <form id="chat-form" method="post" action="{% url 'chat:message' %}">
+        {% csrf_token %}
+        <input type="hidden" id="room-input" name="room" value="{{ room_name }}">
+        <input type="hidden" id="user-input" name="user">
+        <div class="form-group">
+            <textarea id="content-input" name="content"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">发送</button>
+    </form>
+
+    {% block js %}
+        <script src="//cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+        <script>
+            CKEDITOR.replace('content-input');
+        </script>
+
+        <script>
+            const user = prompt('请输入您的用户名：');
+            document.querySelector('#user-input').value = user;
+            setInterval(refreshChatMessages, 1000);
+
+            function refreshChatMessages() {
+                fetch(window.location.href)
+                    .then(response => response.text())
+                    .then(html => {
+                        const tmpEle = document.createElement('div');
+                        tmpEle.innerHTML = html;
+                        const messagesNode = tmpEle.querySelector('#chat-messages');
+                        document.querySelector('#chat-messages').innerHTML = messagesNode.innerHTML;
+                    })
+            }
+
+            const form = document.querySelector('#chat-form');
+            form.onsubmit = async (event) => {
+                event.preventDefault();
+                const formData = new FormData(form);
+                const result = await fetch(form.action, { method: 'POST', body: formData });
+                if (result.ok) {
+                    form.reset();
+                } else {
+                    alert('消息发送失败！');
+                }
+            };
+        </script>
+    {% endblock %}
+{% endblock %}

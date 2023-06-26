@@ -1,0 +1,491 @@
+WARNING 2023-05-05 16:27:38,475 log 11816 11596 Not Found: /favicon.ico
+WARNING 2023-05-05 16:27:40,118 log 11816 11596 Not Found: /article/article-list/favicon.ico
+WARNING 2023-05-05 16:39:24,666 log 2944 6440 Not Found: /article/article-detail/36/favicon.ico
+WARNING 2023-05-05 16:39:27,383 log 2944 12820 Not Found: /article/article-detail/35/favicon.ico
+WARNING 2023-05-05 16:39:30,488 log 2944 12820 Not Found: /accounts/login/favicon.ico
+WARNING 2023-05-05 16:40:02,426 log 2944 5408 Not Found: /article/article-detail/71/favicon.ico
+WARNING 2023-05-05 16:40:05,318 log 2944 5408 Not Found: /article/article-create/favicon.ico
+WARNING 2023-05-05 16:41:02,249 log 2944 5408 Not Found: /accounts/signup/favicon.ico
+WARNING 2023-05-05 16:43:46,475 log 14988 10572 Not Found: /article/article-detail/68/favicon.ico
+WARNING 2023-05-05 16:46:33,219 log 14988 10572 Not Found: /article/article-detail/67/favicon.ico
+WARNING 2023-05-05 16:49:44,779 log 14988 10704 Not Found: /article/article-detail/59/favicon.ico
+WARNING 2023-05-05 19:36:28,278 log 13924 7232 Not Found: /accounts/login/favicon.ico
+WARNING 2023-05-05 19:36:49,314 log 13924 7232 Not Found: /favicon.ico
+WARNING 2023-05-05 19:36:51,796 log 13924 7232 Not Found: /notice/list/favicon.ico
+WARNING 2023-05-05 19:36:55,897 log 13924 9704 Not Found: /article/article-detail/71/favicon.ico
+WARNING 2023-05-05 19:37:20,954 log 13924 9704 Not Found: /article/article-create/favicon.ico
+WARNING 2023-05-05 19:37:59,041 log 13924 9704 Not Found: /article/article-list/favicon.ico
+WARNING 2023-05-05 19:38:04,152 log 13924 1956 Not Found: /article/article-detail/73/favicon.ico
+WARNING 2023-05-05 19:38:22,485 log 13924 9704 Not Found: /article/article-detail/73/favicon.ico
+ERROR 2023-05-05 19:38:24,402 log 13924 9704 Internal Server Error: /comment/post-comment/73/193
+Traceback (most recent call last):
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\django_blog_test\django_blog_numone\comment\views.py", line 84, in post_comment
+    comment_text = comment_form.body
+AttributeError: 'CommentForm' object has no attribute 'body'
+ERROR 2023-05-05 19:39:48,295 log 10464 11928 Internal Server Error: /comment/post-comment/73/193
+Traceback (most recent call last):
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\django_blog_test\django_blog_numone\comment\views.py", line 84, in post_comment
+    comment_text = comment_form.body
+AttributeError: 'CommentForm' object has no attribute 'body'
+ERROR 2023-05-05 19:39:51,259 log 10464 11928 Internal Server Error: /comment/post-comment/73/193
+Traceback (most recent call last):
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\django_blog_test\django_blog_numone\comment\views.py", line 84, in post_comment
+    comment_text = comment_form.body
+AttributeError: 'CommentForm' object has no attribute 'body'
+ERROR 2023-05-05 19:41:29,010 log 8276 6668 Internal Server Error: /comment/post-comment/73/193
+Traceback (most recent call last):
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: comment_comment.article_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\django_blog_test\django_blog_numone\comment\views.py", line 90, in post_comment
+    comment_form.save()
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\forms\models.py", line 468, in save
+    self.instance.save()
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\mptt\models.py", line 1102, in save
+    super().save(*args, **kwargs)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\django_blog_test\django_blog_numone\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: comment_comment.article_id
+WARNING 2023-05-05 19:42:49,862 log 15212 14232 Not Found: /notice/list/favicon.ico
+WARNING 2023-05-05 20:01:15,971 log 2164 8372 Not Found: /media/default.jpg
+WARNING 2023-05-05 20:01:16,045 log 2164 8372 Not Found: /userprofile/edit/77/favicon.ico
+Watching for file changes with StatReloader
+Successfuly imported extension module "markdown.extensions.extra".
+Successfuly imported extension module "markdown.extensions.smart_strong".
+Successfully loaded extension "markdown.extensions.smart_strong.SmartEmphasisExtension".
+Successfuly imported extension module "markdown.extensions.fenced_code".
+Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+Successfuly imported extension module "markdown.extensions.footnotes".
+Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+Successfuly imported extension module "markdown.extensions.attr_list".
+Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+Successfuly imported extension module "markdown.extensions.def_list".
+Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+Successfuly imported extension module "markdown.extensions.tables".
+Successfully loaded extension "markdown.extensions.tables.TableExtension".
+Successfuly imported extension module "markdown.extensions.abbr".
+Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
+Successfuly imported extension module "markdown.extensions.codehilite".
+Successfully loaded extension "markdown.extensions.codehilite.CodeHiliteExtension".
+Successfuly imported extension module "markdown.extensions.toc".
+Successfully loaded extension "markdown.extensions.toc.TocExtension".
+Successfuly imported extension module "markdown.extensions.footnotes".
+Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+Not Found: /favicon.ico
+Not Found: /article/article-detail/104/favicon.ico
+Not Found: /accounts/login/favicon.ico
+Not Found: /accounts/signup/favicon.ico
+Not Found: /photo/favicon.ico
+Not Found: /article/article-list/favicon.ico
+Successfuly imported extension module "markdown.extensions.extra".
+Successfuly imported extension module "markdown.extensions.smart_strong".
+Successfully loaded extension "markdown.extensions.smart_strong.SmartEmphasisExtension".
+Successfuly imported extension module "markdown.extensions.fenced_code".
+Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+Successfuly imported extension module "markdown.extensions.footnotes".
+Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+Successfuly imported extension module "markdown.extensions.attr_list".
+Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+Successfuly imported extension module "markdown.extensions.def_list".
+Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+Successfuly imported extension module "markdown.extensions.tables".
+Successfully loaded extension "markdown.extensions.tables.TableExtension".
+Successfuly imported extension module "markdown.extensions.abbr".
+Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
+Successfuly imported extension module "markdown.extensions.codehilite".
+Successfully loaded extension "markdown.extensions.codehilite.CodeHiliteExtension".
+Successfuly imported extension module "markdown.extensions.toc".
+Successfully loaded extension "markdown.extensions.toc.TocExtension".
+Successfuly imported extension module "markdown.extensions.footnotes".
+Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Collecting submodules for simpleui.templatetags
+collect_submodules - found submodules: ['simpleui.templatetags', 'simpleui.templatetags.simpletags']
+Collecting submodules for django.contrib.admin.templatetags
+collect_submodules - found submodules: ['django.contrib.admin.templatetags', 'django.contrib.admin.templatetags.admin_list', 'django.contrib.admin.templatetags.admin_modify', 'django.contrib.admin.templatetags.admin_urls', 'django.contrib.admin.templatetags.base', 'django.contrib.admin.templatetags.log']
+Collecting submodules for django.contrib.auth.templatetags
+collect_submodules - django.contrib.auth.templatetags is not a package.
+Collecting submodules for django.contrib.contenttypes.templatetags
+collect_submodules - django.contrib.contenttypes.templatetags is not a package.
+Collecting submodules for django.contrib.sessions.templatetags
+collect_submodules - django.contrib.sessions.templatetags is not a package.
+Collecting submodules for django.contrib.messages.templatetags
+collect_submodules - django.contrib.messages.templatetags is not a package.
+Collecting submodules for django.contrib.staticfiles.templatetags
+collect_submodules - django.contrib.staticfiles.templatetags is not a package.
+Collecting submodules for bootstrap4.templatetags
+collect_submodules - bootstrap4.templatetags is not a package.
+Collecting submodules for django.contrib.sites.templatetags
+collect_submodules - django.contrib.sites.templatetags is not a package.
+Collecting submodules for allauth.templatetags
+collect_submodules - allauth.templatetags is not a package.
+Collecting submodules for allauth.account.templatetags
+collect_submodules - found submodules: ['allauth.account.templatetags', 'allauth.account.templatetags.account']
+Collecting submodules for allauth.socialaccount.templatetags
+collect_submodules - found submodules: ['allauth.socialaccount.templatetags', 'allauth.socialaccount.templatetags.socialaccount']
+Collecting submodules for crispy_forms.templatetags
+collect_submodules - found submodules: ['crispy_forms.templatetags', 'crispy_forms.templatetags.crispy_forms_field', 'crispy_forms.templatetags.crispy_forms_filters', 'crispy_forms.templatetags.crispy_forms_tags', 'crispy_forms.templatetags.crispy_forms_utils']
+Collecting submodules for password_reset.templatetags
+collect_submodules - password_reset.templatetags is not a package.
+Collecting submodules for taggit.templatetags
+collect_submodules - taggit.templatetags is not a package.
+Collecting submodules for ckeditor.templatetags
+collect_submodules - ckeditor.templatetags is not a package.
+Collecting submodules for mptt.templatetags
+collect_submodules - found submodules: ['mptt.templatetags', 'mptt.templatetags.mptt_admin', 'mptt.templatetags.mptt_tags']
+Collecting submodules for notifications.templatetags
+collect_submodules - found submodules: ['notifications.templatetags', 'notifications.templatetags.notifications_tags']
+Collecting submodules for article.templatetags
+collect_submodules - found submodules: ['article.templatetags', 'article.templatetags.my_filters_and_tags']
+Collecting submodules for userprofile.templatetags
+collect_submodules - userprofile.templatetags is not a package.
+Collecting submodules for comment.templatetags
+collect_submodules - comment.templatetags is not a package.
+Collecting submodules for notice.templatetags
+collect_submodules - notice.templatetags is not a package.
+Collecting submodules for markdown.templatetags
+collect_submodules - markdown.templatetags is not a package.
+Collecting submodules for widget_tweaks.templatetags
+collect_submodules - found submodules: ['widget_tweaks.templatetags', 'widget_tweaks.templatetags.widget_tweaks']
+Collecting submodules for django_extensions.templatetags
+collect_submodules - found submodules: ['django_extensions.templatetags', 'django_extensions.templatetags.debugger_tags', 'django_extensions.templatetags.highlighting', 'django_extensions.templatetags.indent_text', 'django_extensions.templatetags.syntax_color', 'django_extensions.templatetags.widont']
+Collecting submodules for app01.templatetags
+collect_submodules - app01.templatetags is not a package.
+Collecting submodules for chat.templatetags
+collect_submodules - chat.templatetags is not a package.
+Collecting submodules for photo.templatetags
+collect_submodules - photo.templatetags is not a package.
+Collecting submodules for sharefile.templatetags
+collect_submodules - sharefile.templatetags is not a package.
+Collecting submodules for simpleui.templatetags
+collect_submodules - found submodules: ['simpleui.templatetags', 'simpleui.templatetags.simpletags']
+Collecting submodules for django.contrib.admin.templatetags
+collect_submodules - found submodules: ['django.contrib.admin.templatetags', 'django.contrib.admin.templatetags.admin_list', 'django.contrib.admin.templatetags.admin_modify', 'django.contrib.admin.templatetags.admin_urls', 'django.contrib.admin.templatetags.base', 'django.contrib.admin.templatetags.log']
+Collecting submodules for django.contrib.auth.templatetags
+collect_submodules - django.contrib.auth.templatetags is not a package.
+Collecting submodules for django.contrib.contenttypes.templatetags
+collect_submodules - django.contrib.contenttypes.templatetags is not a package.
+Collecting submodules for django.contrib.sessions.templatetags
+collect_submodules - django.contrib.sessions.templatetags is not a package.
+Collecting submodules for django.contrib.messages.templatetags
+collect_submodules - django.contrib.messages.templatetags is not a package.
+Collecting submodules for django.contrib.staticfiles.templatetags
+collect_submodules - django.contrib.staticfiles.templatetags is not a package.
+Collecting submodules for bootstrap4.templatetags
+collect_submodules - bootstrap4.templatetags is not a package.
+Collecting submodules for django.contrib.sites.templatetags
+collect_submodules - django.contrib.sites.templatetags is not a package.
+Collecting submodules for allauth.templatetags
+collect_submodules - allauth.templatetags is not a package.
+Collecting submodules for allauth.account.templatetags
+collect_submodules - found submodules: ['allauth.account.templatetags', 'allauth.account.templatetags.account']
+Collecting submodules for allauth.socialaccount.templatetags
+collect_submodules - found submodules: ['allauth.socialaccount.templatetags', 'allauth.socialaccount.templatetags.socialaccount']
+Collecting submodules for crispy_forms.templatetags
+collect_submodules - found submodules: ['crispy_forms.templatetags', 'crispy_forms.templatetags.crispy_forms_field', 'crispy_forms.templatetags.crispy_forms_filters', 'crispy_forms.templatetags.crispy_forms_tags', 'crispy_forms.templatetags.crispy_forms_utils']
+Collecting submodules for password_reset.templatetags
+collect_submodules - password_reset.templatetags is not a package.
+Collecting submodules for taggit.templatetags
+collect_submodules - taggit.templatetags is not a package.
+Collecting submodules for ckeditor.templatetags
+collect_submodules - ckeditor.templatetags is not a package.
+Collecting submodules for mptt.templatetags
+collect_submodules - found submodules: ['mptt.templatetags', 'mptt.templatetags.mptt_admin', 'mptt.templatetags.mptt_tags']
+Collecting submodules for notifications.templatetags
+collect_submodules - found submodules: ['notifications.templatetags', 'notifications.templatetags.notifications_tags']
+Collecting submodules for article.templatetags
+collect_submodules - found submodules: ['article.templatetags', 'article.templatetags.my_filters_and_tags']
+Collecting submodules for userprofile.templatetags
+collect_submodules - userprofile.templatetags is not a package.
+Collecting submodules for comment.templatetags
+collect_submodules - comment.templatetags is not a package.
+Collecting submodules for notice.templatetags
+collect_submodules - notice.templatetags is not a package.
+Collecting submodules for markdown.templatetags
+collect_submodules - markdown.templatetags is not a package.
+Collecting submodules for widget_tweaks.templatetags
+collect_submodules - found submodules: ['widget_tweaks.templatetags', 'widget_tweaks.templatetags.widget_tweaks']
+Collecting submodules for django_extensions.templatetags
+collect_submodules - found submodules: ['django_extensions.templatetags', 'django_extensions.templatetags.debugger_tags', 'django_extensions.templatetags.highlighting', 'django_extensions.templatetags.indent_text', 'django_extensions.templatetags.syntax_color', 'django_extensions.templatetags.widont']
+Collecting submodules for app01.templatetags
+collect_submodules - app01.templatetags is not a package.
+Collecting submodules for chat.templatetags
+collect_submodules - chat.templatetags is not a package.
+Collecting submodules for photo.templatetags
+collect_submodules - photo.templatetags is not a package.
+Collecting submodules for sharefile.templatetags
+collect_submodules - sharefile.templatetags is not a package.
+Collecting submodules for simpleui.templatetags
+collect_submodules - found submodules: ['simpleui.templatetags', 'simpleui.templatetags.simpletags']
+Collecting submodules for django.contrib.admin.templatetags
+collect_submodules - found submodules: ['django.contrib.admin.templatetags', 'django.contrib.admin.templatetags.admin_list', 'django.contrib.admin.templatetags.admin_modify', 'django.contrib.admin.templatetags.admin_urls', 'django.contrib.admin.templatetags.base', 'django.contrib.admin.templatetags.log']
+Collecting submodules for django.contrib.auth.templatetags
+collect_submodules - django.contrib.auth.templatetags is not a package.
+Collecting submodules for django.contrib.contenttypes.templatetags
+collect_submodules - django.contrib.contenttypes.templatetags is not a package.
+Collecting submodules for django.contrib.sessions.templatetags
+collect_submodules - django.contrib.sessions.templatetags is not a package.
+Collecting submodules for django.contrib.messages.templatetags
+collect_submodules - django.contrib.messages.templatetags is not a package.
+Collecting submodules for django.contrib.staticfiles.templatetags
+collect_submodules - django.contrib.staticfiles.templatetags is not a package.
+Collecting submodules for bootstrap4.templatetags
+collect_submodules - bootstrap4.templatetags is not a package.
+Collecting submodules for django.contrib.sites.templatetags
+collect_submodules - django.contrib.sites.templatetags is not a package.
+Collecting submodules for allauth.templatetags
+collect_submodules - allauth.templatetags is not a package.
+Collecting submodules for allauth.account.templatetags
+collect_submodules - found submodules: ['allauth.account.templatetags', 'allauth.account.templatetags.account']
+Collecting submodules for allauth.socialaccount.templatetags
+collect_submodules - found submodules: ['allauth.socialaccount.templatetags', 'allauth.socialaccount.templatetags.socialaccount']
+Collecting submodules for crispy_forms.templatetags
+collect_submodules - found submodules: ['crispy_forms.templatetags', 'crispy_forms.templatetags.crispy_forms_field', 'crispy_forms.templatetags.crispy_forms_filters', 'crispy_forms.templatetags.crispy_forms_tags', 'crispy_forms.templatetags.crispy_forms_utils']
+Collecting submodules for password_reset.templatetags
+collect_submodules - password_reset.templatetags is not a package.
+Collecting submodules for taggit.templatetags
+collect_submodules - taggit.templatetags is not a package.
+Collecting submodules for ckeditor.templatetags
+collect_submodules - ckeditor.templatetags is not a package.
+Collecting submodules for mptt.templatetags
+collect_submodules - found submodules: ['mptt.templatetags', 'mptt.templatetags.mptt_admin', 'mptt.templatetags.mptt_tags']
+Collecting submodules for notifications.templatetags
+collect_submodules - found submodules: ['notifications.templatetags', 'notifications.templatetags.notifications_tags']
+Collecting submodules for article.templatetags
+collect_submodules - found submodules: ['article.templatetags', 'article.templatetags.my_filters_and_tags']
+Collecting submodules for userprofile.templatetags
+collect_submodules - userprofile.templatetags is not a package.
+Collecting submodules for comment.templatetags
+collect_submodules - comment.templatetags is not a package.
+Collecting submodules for notice.templatetags
+collect_submodules - notice.templatetags is not a package.
+Collecting submodules for markdown.templatetags
+collect_submodules - markdown.templatetags is not a package.
+Collecting submodules for widget_tweaks.templatetags
+collect_submodules - found submodules: ['widget_tweaks.templatetags', 'widget_tweaks.templatetags.widget_tweaks']
+Collecting submodules for django_extensions.templatetags
+collect_submodules - found submodules: ['django_extensions.templatetags', 'django_extensions.templatetags.debugger_tags', 'django_extensions.templatetags.highlighting', 'django_extensions.templatetags.indent_text', 'django_extensions.templatetags.syntax_color', 'django_extensions.templatetags.widont']
+Collecting submodules for app01.templatetags
+collect_submodules - app01.templatetags is not a package.
+Collecting submodules for chat.templatetags
+collect_submodules - chat.templatetags is not a package.
+Collecting submodules for photo.templatetags
+collect_submodules - photo.templatetags is not a package.
+Collecting submodules for sharefile.templatetags
+collect_submodules - sharefile.templatetags is not a package.
+Using proactor: IocpProactor
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /article/article-list/favicon.ico
+Successfuly imported extension module "markdown.extensions.extra".
+Successfuly imported extension module "markdown.extensions.smart_strong".
+Successfully loaded extension "markdown.extensions.smart_strong.SmartEmphasisExtension".
+Successfuly imported extension module "markdown.extensions.fenced_code".
+Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+Successfuly imported extension module "markdown.extensions.footnotes".
+Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+Successfuly imported extension module "markdown.extensions.attr_list".
+Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+Successfuly imported extension module "markdown.extensions.def_list".
+Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+Successfuly imported extension module "markdown.extensions.tables".
+Successfully loaded extension "markdown.extensions.tables.TableExtension".
+Successfuly imported extension module "markdown.extensions.abbr".
+Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
+Successfuly imported extension module "markdown.extensions.codehilite".
+Successfully loaded extension "markdown.extensions.codehilite.CodeHiliteExtension".
+Successfuly imported extension module "markdown.extensions.toc".
+Successfully loaded extension "markdown.extensions.toc.TocExtension".
+Successfuly imported extension module "markdown.extensions.footnotes".
+Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+Not Found: /article/article-detail/104/favicon.ico
+Not Found: /photo/favicon.ico
+Not Found: /accounts/login/favicon.ico
+Not Found: /accounts/signup/favicon.ico
+Successfuly imported extension module "markdown.extensions.extra".
+Successfuly imported extension module "markdown.extensions.smart_strong".
+Successfully loaded extension "markdown.extensions.smart_strong.SmartEmphasisExtension".
+Successfuly imported extension module "markdown.extensions.fenced_code".
+Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+Successfuly imported extension module "markdown.extensions.footnotes".
+Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+Successfuly imported extension module "markdown.extensions.attr_list".
+Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+Successfuly imported extension module "markdown.extensions.def_list".
+Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+Successfuly imported extension module "markdown.extensions.tables".
+Successfully loaded extension "markdown.extensions.tables.TableExtension".
+Successfuly imported extension module "markdown.extensions.abbr".
+Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
+Successfuly imported extension module "markdown.extensions.codehilite".
+Successfully loaded extension "markdown.extensions.codehilite.CodeHiliteExtension".
+Successfuly imported extension module "markdown.extensions.toc".
+Successfully loaded extension "markdown.extensions.toc.TocExtension".
+Successfuly imported extension module "markdown.extensions.footnotes".
+Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+Successfuly imported extension module "markdown.extensions.extra".
+Successfuly imported extension module "markdown.extensions.smart_strong".
+Successfully loaded extension "markdown.extensions.smart_strong.SmartEmphasisExtension".
+Successfuly imported extension module "markdown.extensions.fenced_code".
+Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+Successfuly imported extension module "markdown.extensions.footnotes".
+Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+Successfuly imported extension module "markdown.extensions.attr_list".
+Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+Successfuly imported extension module "markdown.extensions.def_list".
+Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+Successfuly imported extension module "markdown.extensions.tables".
+Successfully loaded extension "markdown.extensions.tables.TableExtension".
+Successfuly imported extension module "markdown.extensions.abbr".
+Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
+Successfuly imported extension module "markdown.extensions.codehilite".
+Successfully loaded extension "markdown.extensions.codehilite.CodeHiliteExtension".
+Successfuly imported extension module "markdown.extensions.toc".
+Successfully loaded extension "markdown.extensions.toc.TocExtension".
+Successfuly imported extension module "markdown.extensions.footnotes".
+Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+Successfuly imported extension module "markdown.extensions.extra".
+Successfuly imported extension module "markdown.extensions.smart_strong".
+Successfully loaded extension "markdown.extensions.smart_strong.SmartEmphasisExtension".
+Successfuly imported extension module "markdown.extensions.fenced_code".
+Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+Successfuly imported extension module "markdown.extensions.footnotes".
+Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+Successfuly imported extension module "markdown.extensions.attr_list".
+Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+Successfuly imported extension module "markdown.extensions.def_list".
+Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+Successfuly imported extension module "markdown.extensions.tables".
+Successfully loaded extension "markdown.extensions.tables.TableExtension".
+Successfuly imported extension module "markdown.extensions.abbr".
+Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
+Successfuly imported extension module "markdown.extensions.codehilite".
+Successfully loaded extension "markdown.extensions.codehilite.CodeHiliteExtension".
+Successfuly imported extension module "markdown.extensions.toc".
+Successfully loaded extension "markdown.extensions.toc.TocExtension".
+Successfuly imported extension module "markdown.extensions.footnotes".
+Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+Not Found: /article/article-detail/103/favicon.ico
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Collecting submodules for simpleui.templatetags
+collect_submodules - found submodules: ['simpleui.templatetags', 'simpleui.templatetags.simpletags']
+Collecting submodules for django.contrib.admin.templatetags
+collect_submodules - found submodules: ['django.contrib.admin.templatetags', 'django.contrib.admin.templatetags.admin_list', 'django.contrib.admin.templatetags.admin_modify', 'django.contrib.admin.templatetags.admin_urls', 'django.contrib.admin.templatetags.base', 'django.contrib.admin.templatetags.log']
+Collecting submodules for django.contrib.auth.templatetags
+collect_submodules - django.contrib.auth.templatetags is not a package.
+Collecting submodules for django.contrib.contenttypes.templatetags
+collect_submodules - django.contrib.contenttypes.templatetags is not a package.
+Collecting submodules for django.contrib.sessions.templatetags
+collect_submodules - django.contrib.sessions.templatetags is not a package.
+Collecting submodules for django.contrib.messages.templatetags
+collect_submodules - django.contrib.messages.templatetags is not a package.
+Collecting submodules for django.contrib.staticfiles.templatetags
+collect_submodules - django.contrib.staticfiles.templatetags is not a package.
+Collecting submodules for bootstrap4.templatetags
+collect_submodules - bootstrap4.templatetags is not a package.
+Collecting submodules for django.contrib.sites.templatetags
+collect_submodules - django.contrib.sites.templatetags is not a package.
+Collecting submodules for allauth.templatetags
+collect_submodules - allauth.templatetags is not a package.
+Collecting submodules for allauth.account.templatetags
+collect_submodules - found submodules: ['allauth.account.templatetags', 'allauth.account.templatetags.account']
+Collecting submodules for allauth.socialaccount.templatetags
+collect_submodules - found submodules: ['allauth.socialaccount.templatetags', 'allauth.socialaccount.templatetags.socialaccount']
+Collecting submodules for crispy_forms.templatetags
+collect_submodules - found submodules: ['crispy_forms.templatetags', 'crispy_forms.templatetags.crispy_forms_field', 'crispy_forms.templatetags.crispy_forms_filters', 'crispy_forms.templatetags.crispy_forms_tags', 'crispy_forms.templatetags.crispy_forms_utils']
+Collecting submodules for password_reset.templatetags
+collect_submodules - password_reset.templatetags is not a package.
+Collecting submodules for taggit.templatetags
+collect_submodules - taggit.templatetags is not a package.
+Collecting submodules for ckeditor.templatetags
+collect_submodules - ckeditor.templatetags is not a package.
+Collecting submodules for mptt.templatetags
+collect_submodules - found submodules: ['mptt.templatetags', 'mptt.templatetags.mptt_admin', 'mptt.templatetags.mptt_tags']
+Collecting submodules for notifications.templatetags
+collect_submodules - found submodules: ['notifications.templatetags', 'notifications.templatetags.notifications_tags']
+Collecting submodules for article.templatetags
+collect_submodules - found submodules: ['article.templatetags', 'article.templatetags.my_filters_and_tags']
+Collecting submodules for userprofile.templatetags
+collect_submodules - userprofile.templatetags is not a package.
+Collecting submodules for comment.templatetags
+collect_submodules - comment.templatetags is not a package.
+Collecting submodules for notice.templatetags
+collect_submodules - notice.templatetags is not a package.
+Collecting submodules for markdown.templatetags
+collect_submodules - markdown.templatetags is not a package.
+Collecting submodules for widget_tweaks.templatetags
+collect_submodules - found submodules: ['widget_tweaks.templatetags', 'widget_tweaks.templatetags.widget_tweaks']
+Collecting submodules for django_extensions.templatetags
+collect_submodules - found submodules: ['django_extensions.templatetags', 'django_extensions.templatetags.debugger_tags', 'django_extensions.templatetags.highlighting', 'django_extensions.templatetags.indent_text', 'django_extensions.templatetags.syntax_color', 'django_extensions.templatetags.widont']
+Collecting submodules for app01.templatetags
+collect_submodules - app01.templatetags is not a package.
+Collecting submodules for chat.templatetags
+collect_submodules - chat.templatetags is not a package.
+Collecting submodules for photo.templatetags
+collect_submodules - photo.templatetags is not a package.
+Collecting submodules for sharefile.templatetags
+collect_submodules - sharefile.templatetags is not a package.

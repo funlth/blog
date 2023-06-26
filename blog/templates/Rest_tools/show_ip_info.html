@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <title>获取地址位置信息</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#btn-show-ip").click(function() {
+          $.get("https://api.ipify.org", function(data) {
+            var ipAddress = data;
+            var deviceInfo = "用户代理: " + navigator.userAgent + "\n" +
+                             "浏览器语言: " + navigator.language + "\n" +
+                             "平台: " + navigator.platform;
+            var message = "你的地址: " + ipAddress + "\n" +
+                          "设备信息: \n" + deviceInfo;
+            window.alert(message);
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="btn-show-ip">查看ip信息</button>
+  </body>
+</html>

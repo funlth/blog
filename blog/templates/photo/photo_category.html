@@ -1,0 +1,137 @@
+{#{% extends 'base.html' %}#}
+{##}
+{#{% block content %}#}
+{#    <div class="container pt-5">#}
+{#        <div class="row">#}
+{#            <div class="col-sm-12 col-md-3 mb-4 mb-md-0">#}
+{#                <h2>{{ category }} <a href="{% url 'photo:photo_list' %}">叮~</a></h2>#}
+{#                <div class="list-group">#}
+{#                    {% for cat in categories %}#}
+{#                        <a href="{% url 'photo:photo_category' cat.id %}"#}
+{#                           class="list-group-item{% if category.id == cat.id %} active{% endif %}">{{ cat }}</a>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#            <div class="col-sm-12 col-md-9">#}
+{#                <div class="row row-cols-1 row-cols-md-3 g-4">#}
+{#                    {% for photo in photos %}#}
+{#                        <div class="col">#}
+{#                            <div class="card h-100">#}
+{#                                <img src="{{ photo.image.url }}" class="card-img-top" alt="{{ photo.description }}">#}
+{#                                <div class="card-body">#}
+{#                                    <h5 class="card-title">{{ photo.category }}</h5>#}
+{#                                    <p class="card-text">{{ photo.description }}</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#    <style>#}
+{#        .list-group {#}
+{#            position: fixed; /* 将元素固定 */#}
+{#            top: 50%; /* 与顶部距离为页面高度的一半 */#}
+{#            transform: translateY(-50%); /* 将元素上下调整至中间 */#}
+{#            left: 0; /* 与左侧对齐 */#}
+{#            z-index: 99999; /* 设置元素层级 */#}
+{#        }#}
+{##}
+{#        html,#}
+{#        body {#}
+{#            height: 100%;#}
+{#        }#}
+{##}
+{#        body {#}
+{#            overflow-y: scroll; /* 显示滚动条 */#}
+{#            scroll-behavior: smooth; /* 平滑滚动 */#}
+{#        }#}
+{##}
+{#        .list-group {#}
+{#            width: 200px; /* 定义元素宽度 */#}
+{#            max-height: 100%;#}
+{#            overflow-y: auto; /* 设置纵向滚动条 */#}
+{#        }#}
+{#    </style>#}
+{##}
+{##}
+{#{% endblock %}#}
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-sm-12 col-md-3 mb-4 mb-md-0">
+                <h2>{{ category }} <a href="{% url 'photo:photo_list' %}">叮~</a></h2>
+                <div class="list-group">
+                    {% for cat in categories %}
+                        <a href="{% url 'photo:photo_category' cat.id %}"
+                           class="list-group-item{% if category.id == cat.id %} active{% endif %}">{{ cat }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-9">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    {% for photo in photos %}
+                        <div class="col">
+                            <div class="card h-100">
+                                <a href="{{ photo.image.url }}" target="_blank" rel="noopener noreferrer">
+                                    <img src="{{ photo.image.url }}" class="card-img-top" alt="{{ photo.description }}">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ photo.category }}</h5>
+                                    <p class="card-text">{{ photo.description }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">{{ photo.created_at|date:"Y-m-d" }}</small>
+                                        <div class="d-flex">
+                                            <a href="{{photo.image.url}}" download="{{photo.name}}" class="mx-3">
+                                                下载
+                                            </a>
+                                            <button class="btn btn-secondary" data-toggle="modal"
+                                                    data-target="#myModal{{photo.pk}}">
+                                                查看大图
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal{{photo.pk}}" tabindex="-1" role="dialog"
+                             aria-labelledby="myModalLabel">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">{{ photo.name }}</h4>
+                                        <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="{{ photo.image.url }}"
+                                             alt="{{ photo.description }}" class="img-fluid">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                        </button>
+                                        <a href="{{photo.image.url}}" download="{{photo.name}}"
+                                           class="btn btn-primary">下载</a>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#send").click(function(event) {
+                event.preventDefault();
+                var value = $("#msg").val().trim();
+                if (value == '') {
+                    return;
+                }
+                else {
+                    $.getJSON("/chat/", {"msg": value}, function(data) {
+                        var res = data['response'];
+                        var div = $("<div class='user_msg' />");
+                        div.html("你: " + value);
+                        $("#chat").append(div);
+                        var div1 = $("<div class='bot_msg' />");
+                        div1.text("机器人: "+ res);
+                        $("#chat").append(div1);
+                        $("#msg").val("");
+                    });
+                }
+            });
+    </script>
+    <style type="text/css">
+        #container {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 32pt;
+        }
+
+        #chatbox {
+            width: 50%;
+            height: 500px;
+            background-image: url("jfh.png");
+            border: 2px solid #808080;
+            overflow-x:hidden;
+            overflow-y: scroll;
+        }
+
+        .user_msg {
+            color: grey;
+            margin-top:10px;
+            margin-bottom:10px;
+            margin-left:10px;
+            font-size: 12pt;
+        }
+
+        .bot_msg {
+            color: green;
+            margin-top:10px;
+            margin-bottom:10px;
+            margin-right:10px;
+            text-align:right;
+            font-size: 12pt;
+        }
+
+        #msg {
+            width: 70%;
+            height: 50px;
+            font-size: 18pt;
+            border: none;
+            padding-left: 10px;
+        }
+
+        #send{
+            width:30%;
+            height:50px;
+            font-size: 16pt;
+            background-color: #f2f2f2;
+            border: none;
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1>Chatbot</h1>
+    <div id="chatbox">
+        <div style="height:300px"></div>
+    </div>
+    <br>
+    <form>
+        <input id = "msg" type="text" name="lname" value="">
+        <button id = "send">发送</button>
+    </form>
+
+</div>
+</body>
+</html>

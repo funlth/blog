@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>相关推荐</h1>
+    <ul>
+        {% for article in recommended_articles %}
+            <li><a href="{% url 'article:article_create' article.id %}">{{ article.title }}</a></li>
+        {% empty %}
+            <p>暂无相关文章推荐</p>
+        {% endfor %}
+    </ul>
+{% endblock %}
